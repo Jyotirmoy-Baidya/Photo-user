@@ -1,7 +1,37 @@
+import { useEffect, useState } from "react";
 import { GoHomeFill } from "react-icons/go"
 import { NavLink } from "react-router-dom"
+import MessageSection from "../components/Home/MessageSection";
+import TopicsSection from "../components/Home/TopicsSection";
 
 const Home = () => {
+
+    const tags = [
+        "Technology",
+        "Photography",
+        "Job",
+        "ui/ux",
+        "Economics",
+        "Freelancing",
+        "Business",
+        "Entrepreneurship",
+        "Management",
+    ];
+
+    const [showTopics, setShowTopics] = useState(0);
+    const [topicsLoading, setTopicsLoading] = useState(true);
+
+    const gettingTopics = async () => {
+        setTimeout(() => {
+            setShowTopics(tags.length >= 4 ? 4 : tags.length)
+            setTopicsLoading(false);
+        }, 2000);
+    }
+
+    gettingTopics();
+
+
+
     return (
         <div className="h-screen bg-primary-bg flex flex-col">
             {/* header start */}
@@ -62,8 +92,14 @@ const Home = () => {
                 {/* Middle Section End */}
 
                 {/* Right Section Start  */}
-                <div className="w-80 hidden md:block p-3">
-                    <div className="flex flex-col gap-2">
+                <div className="w-80 hidden md:block mt-8 p-3 overflow-scroll hide-scrollbar">
+                    <div className="flex flex-col gap-4">
+                        {/* Topics */}
+                        <TopicsSection />
+
+                        {/* Messages  */}
+                        <MessageSection />
+
                     </div>
                 </div>
                 {/* Right Section End */}
