@@ -36,7 +36,7 @@ const Home = () => {
 
 
     return (
-        <div className="flex mt-8 p-3 max-w-full w-7/12">
+        <div className="flex mt-2 md:mt-8 p-3 max-w-full md:w-7/12">
             <div className="flex flex-col flex-grow gap-3 max-w-full w-full overflow-y-scroll hide-scrollbar">
                 <JobCard />
 
