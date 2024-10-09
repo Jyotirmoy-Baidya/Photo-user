@@ -3,6 +3,7 @@ import { GoHomeFill } from "react-icons/go"
 import { NavLink } from "react-router-dom"
 import MessageSection from "../components/Home/MessageSection";
 import TopicsSection from "../components/Home/TopicsSection";
+import JobCard from "../components/Home/JobCard";
 
 const Home = () => {
 
@@ -39,7 +40,7 @@ const Home = () => {
             {/* header end  */}
             <div className="h-full flex flex-grow">
                 {/* Left Section Start */}
-                <div className="w-64 flex-grow-1 mt-8 mb-4 hidden md:block p-3">
+                <div className="mt-8 mb-4 hidden md:block p-3 w-2/12">
                     <div className="flex h-full flex-col justify-between">
                         <div className="w-full flex gap-2 items-center bg-primary-darkgray rounded-lg py-3 px-3 mb-4 profile">
                             <div className="h-12 w-12">
@@ -84,15 +85,25 @@ const Home = () => {
                 {/* Left Section End */}
 
                 {/* Middle Section Start */}
-                <div className="flex flex-grow">
-                    <div className="flex flex-col w-full gap-20 overflow-y-scroll">
+                <div className="flex mt-8 p-3 max-w-full w-7/12">
+                    <div className="flex flex-col flex-grow gap-3 max-w-full w-full overflow-y-scroll hide-scrollbar">
+                        <JobCard />
 
+                        <JobCard />
+
+                        <JobCard />
+
+                        <JobCard />
+
+                        <JobCard />
+
+                        <JobCard />
                     </div>
                 </div>
                 {/* Middle Section End */}
 
                 {/* Right Section Start  */}
-                <div className="w-80 hidden md:block mt-8 p-3 overflow-scroll hide-scrollbar">
+                <div className="hidden md:block mt-8 p-3 overflow-scroll hide-scrollbar w-3/12">
                     <div className="flex flex-col gap-4">
                         {/* Topics */}
                         <TopicsSection />
