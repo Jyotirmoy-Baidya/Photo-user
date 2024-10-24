@@ -14,14 +14,10 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-<<<<<<< HEAD
-    "react-router-dom": "^6.27.0"
-=======
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-icons": "^5.3.0",
-    "react-router-dom": "^6.26.2"
->>>>>>> fea134ea1547f0dbd8ffd5c87b2e338f1d7969b1
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
