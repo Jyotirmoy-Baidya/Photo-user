@@ -22,7 +22,7 @@ const App = () => {
                 <Route path='/notifications' element={<Notifications />} />
                 <Route path='/messages' element={<Messages />} />
               </Routes>
-              <RightSection />
+              {/* <RightSection /> */}
             </div>
           </div> :
           <Routes>
