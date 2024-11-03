@@ -60,7 +60,7 @@ const MessageSection = () => {
     if (selectedId === null) return;
 
     const newMessage = {
-       name: "me",
+      name: "me",
       message: newMessageText,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
@@ -75,8 +75,8 @@ const MessageSection = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-full">
-      <div className="w-full md:w-1/4 bg-gray-800 p-4 md:border-r border-gray-600">
+    <div className="flex flex-col md:flex-row h-screen w-full md:w-10/12">
+      <div className="w-full md:w-1/4 bg-primary-darkgray p-4 md:border-r border-gray-600">
         <h2 className="text-white text-lg font-bold mb-4">Messages</h2>
         <div className="flex space-x-4 mb-4">
           {["Primary", "General", "Request"].map((tab) => (
@@ -91,10 +91,10 @@ const MessageSection = () => {
         </div>
         <div className="space-y-4 overflow-y-auto">
           {messageData[activeTab].map((message) => (
-            <MessageItem 
-              key={message.id} 
-              message={message} 
-              onClick={() => setSelectedId(message.id)} 
+            <MessageItem
+              key={message.id}
+              message={message}
+              onClick={() => setSelectedId(message.id)}
             />
           ))}
         </div>
@@ -102,12 +102,12 @@ const MessageSection = () => {
 
       <div className="w-full md:w-3/4 flex-grow bg-gray-900 p-4">
         {messageData[activeTab].map((message) => (
-          message.id === selectedId && 
-            <ChatSection 
-              key={message.id} 
-              messages={message} 
-              onSendMessage={handleSendMessage} 
-            />
+          message.id === selectedId &&
+          <ChatSection
+            key={message.id}
+            messages={message}
+            onSendMessage={handleSendMessage}
+          />
         ))}
       </div>
     </div>

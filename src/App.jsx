@@ -8,6 +8,8 @@ import RightSection from './components/Home/RightSection';
 import Notifications from './pages/Notifications';
 import Messages from './pages/Messages';
 import MessageSection from './components/Home/MessageSection';
+import Profile from './pages/Profile';
+import Leaderboard from './pages/Leaderboard';
 
 const login = true; // Assuming login is handled globally
 
@@ -24,11 +26,10 @@ const App = () => {
                 <Route path="/notifications" element={<Notifications />} />
                 {/* <MessageSection/> */}
                 <Route path="/messages" element={<Messages />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/leaderboard' element={<Leaderboard />} />
 
 
-              </Routes>
-              {/* <RightSection /> */}
-              <Routes>
               </Routes>
             </div>
           </div>

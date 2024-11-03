@@ -52,8 +52,8 @@ const Home = () => {
                     <JobCard />
                 </div>
             </div>
-
             <RightSection />
+
         </>
     )
 }
