@@ -8,7 +8,7 @@ const LeftSection = () => {
     return (
         <div className="mt-8 mb-4 hidden md:block p-3 w-2/12">
             <div className="flex h-full flex-col justify-between">
-                <div className="w-full flex gap-2 items-center bg-primary-darkgray rounded-lg py-3 px-3 mb-4 profile">
+                <NavLink to='/profile' className="w-full flex gap-2 items-center bg-primary-darkgray rounded-lg py-3 px-3 mb-4 profile">
                     <div className="h-12 w-12">
                         <img src="./assets/image.png" className="w-full h-full" alt="profile pic" />
                     </div>
@@ -16,7 +16,7 @@ const LeftSection = () => {
                         <div className="text-sm font-medium tracking-wide text-primary-white">Gabimaru</div>
                         <div className="text-xs tracking-wide text-primary-white">@gabimaru</div>
                     </div>
-                </div>
+                </NavLink>
                 <div className="flex flex-col gap-2">
                     <NavLink to='/' className={`h-10 w-full rounded-md flex items-center px-4 ${path == '/' ? 'bg-primary-white text-primary-bg' : 'bg-primary-bg text-primary-white'} hover:bg-primary-white  hover:text-primary-bg gap-2 transition-all`}>
                         <div className=""><GoHomeFill /></div>
@@ -31,6 +31,10 @@ const LeftSection = () => {
                     <NavLink to='/messages' className={`h-10 w-full rounded-md flex items-center px-4 ${path == '/messages' ? 'bg-primary-white text-primary-bg' : 'bg-primary-bg text-primary-white'} hover:bg-primary-white hover:text-primary-bg gap-2 transition-all`}>
                         <div className=""><GoHomeFill /></div>
                         <div className="font-medium">Messages</div>
+                    </NavLink>
+                    <NavLink to='/leaderboard' className={`h-10 w-full rounded-md flex items-center px-4 ${path == '/notifications' ? 'bg-primary-white text-primary-bg' : 'bg-primary-bg text-primary-white'} hover:bg-primary-white hover:text-primary-bg gap-2 transition-all`}>
+                        <div className=""><GoHomeFill /></div>
+                        <div className="font-medium">Leaderboard</div>
                     </NavLink>
 
                     <NavLink className="h-10 w-full rounded-md flex items-center px-4 bg-primary-blue hover:bg-blue-400 text-primary-white mt-4 gap-2 transition-all">
