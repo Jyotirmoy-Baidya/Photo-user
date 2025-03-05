@@ -1,10 +1,14 @@
 import React from 'react'
 import { GoHomeFill } from 'react-icons/go'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, Route, useLocation } from 'react-router-dom'
 
 const LeftSection = () => {
     const location = useLocation();
     const path = location.pathname;
+
+    if (path == '/') {
+        return (<></>)
+    }
     return (
         <div className="mt-8 mb-4 hidden md:block p-3 w-2/12">
             <div className="flex h-full flex-col justify-between">

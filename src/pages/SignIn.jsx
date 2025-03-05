@@ -3,13 +3,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faApple, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import axiosHandler from '../utils/AxiosInstance';
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const login = async (e) => {
+    console.log("yjoti")
+    e.preventDefault();
+    try {
+      const response = await axiosHandler('get', `user/${1}`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-700 text-white px-4">
@@ -32,6 +46,7 @@ const SignIn = () => {
               <input
                 type="text"
                 id="email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 md:p-4 bg-white text-gray-900 rounded-lg placeholder-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter email or user name"
               />
@@ -41,11 +56,12 @@ const SignIn = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 md:p-4 bg-white text-gray-900 rounded-lg placeholder-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Password"
               />
               <span
-                onClick={togglePassword}
+                onClick={() => { togglePassword() }}
                 className="absolute inset-y-0 right-4 top-5 cursor-pointer text-gray-400"
               >
                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
@@ -53,7 +69,8 @@ const SignIn = () => {
               <a href="#" className="text-blue-500 text-sm float-right mt-1">Forgot password?</a>
             </div>
 
-            <button className="w-full py-3 md:py-4 bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none"> {/* Responsive button size */}
+            <button className="w-full py-3 md:py-4 bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none"
+              onClick={(e) => { login(e); }}> {/* Responsive button size */}
               Login
             </button>
           </form>
@@ -81,7 +98,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

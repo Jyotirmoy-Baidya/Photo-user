@@ -8,6 +8,8 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+
+
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -15,6 +17,8 @@ const Signup = () => {
   const toggleConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
+
+  const registerUser = () => { }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-700 text-white px-4">
