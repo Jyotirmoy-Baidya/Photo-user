@@ -16,8 +16,8 @@ const axiosHandler = async (method, url, data = {}, config = {
 }) => {
     try {
         const response = await axiosInstance({
-            method: "get",  // Ensure 'method' is properly passed
-            url: "user/1",        // Ensure 'url' is provided
+            method: method,  // Ensure 'method' is properly passed
+            url: url,        // Ensure 'url' is provided
             data: data,      // Optional: Only include if needed
             // withCredentials: true
         });
