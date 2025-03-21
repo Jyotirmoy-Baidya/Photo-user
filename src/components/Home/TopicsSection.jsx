@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
-const TopicsSection = () => {
-    const tags = [
-        "Technology",
-        "Photography",
-        "Job",
-        "ui/ux",
-        "Economics",
-        "Freelancing",
-        "Business",
-        "Entrepreneurship",
-        "Management",
-    ];
+const TopicsSection = ({ tags }) => {
 
     const [showTopics, setShowTopics] = useState(0);
     const [topicsLoading, setTopicsLoading] = useState(true);
-
+    console.log(tags)
     // Function to load topics after a delay (simulating async fetch)
     const gettingTopics = async () => {
         setTimeout(() => {
@@ -34,20 +24,21 @@ const TopicsSection = () => {
             <div className="text-xl font-medium tracking-wider text-white mb-2">
                 Topics
             </div>
-            {topicsLoading ? (
+            {!tags ? (
                 <div className="text-white text-sm">Loading...</div>
             ) : (
-                <div className="flex items-center justify-center">
+                <div className="flex items-center">
                     <div className="flex flex-wrap gap-2">
                         {tags
                             .filter((_, index) => index < showTopics)
                             .map((tag, index) => (
-                                <span
+                                <NavLink
+                                    to={`/home/${tag.id}`}
                                     key={index}
                                     className="px-2 py-1 bg-gray-700 text-primary-white text-xs tracking-wider rounded-full"
                                 >
-                                    {tag}
-                                </span>
+                                    {tag.name}
+                                </NavLink>
                             ))}
                     </div>
                 </div>

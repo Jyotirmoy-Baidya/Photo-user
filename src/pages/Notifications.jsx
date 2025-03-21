@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import RightSection from '../components/Home/RightSection';
+import LeftSection from '../components/Home/LeftSection';
 
 const notifications = [
     { id: 1, name: 'Jess Raddon', message: 'started following you', time: '2 hours ago', type: 'following' },
@@ -18,7 +19,8 @@ const Notifications = () => {
     });
 
     return (
-        <>
+        <div className="h-full flex flex-grow">
+            <LeftSection />
             <div className="w-full md:w-7/12 mx-auto p-4 bg-primary-bg text-white rounded-lg">
                 <div className="flex justify-between items-center border-b border-gray-600 pb-2">
                     <h2 className="text-xl font-semibold">Notification</h2>
@@ -69,7 +71,7 @@ const Notifications = () => {
                 </ul>
             </div>
             <RightSection />
-        </>
+        </div>
     );
 };
 

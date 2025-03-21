@@ -12,12 +12,25 @@ import Profile from './pages/Profile';
 import Leaderboard from './pages/Leaderboard';
 import LandingPage from './pages/LandingPage';
 import Auth from './auth/AuthProvider';
+import axiosHandler from './utils/AxiosInstance';
 
 const login = true; // Assuming login is handled globally
 
 const App = () => {
 
   const [login, setLogin] = useState(false);
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    const getTags = async () => {
+      const response = await axiosHandler(
+        'GET',
+        '/tags'
+      );
+      setTags(response);
+    }
+    getTags();
+  }, [])
 
   useEffect(() => {
     const isLoggedIn = () => {
@@ -38,7 +51,8 @@ const App = () => {
           {/* <LeftSection /> */}
           <Routes>
             <Route path='/' element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home tags={tags} />} />
+            <Route path="/home/:TagId" element={<Home tags={tags} />} />
             <Route path="/notifications" element={<Notifications />} />
             {/* <MessageSection/> */}
             <Route path="/messages" element={<Messages />} />
