@@ -42,7 +42,7 @@ const components = {
     },
     SignIn: {
         Footer() {
-            const { toSignUp } = useAuthenticator();
+            const { toForgotPassword, toSignUp } = useAuthenticator();
             return (
                 <View className="text-center mt-4">
                     <p className="text-muted-foreground">
@@ -52,6 +52,15 @@ const components = {
                             className="text-primary hover:underline bg-transparent border-none p-0"
                         >
                             Sign up here
+                        </button>
+                    </p>
+                    <p className="text-muted-foreground mt-2">
+                        Forgot your password?{" "}
+                        <button
+                            onClick={toForgotPassword} // Correct way to navigate
+                            className="text-primary hover:underline bg-transparent border-none p-0"
+                        >
+                            Reset here
                         </button>
                     </p>
                 </View>
